@@ -3,7 +3,7 @@ function createBoard(size) {
   for (let i = 0; i < size; i++) {
     newBoard[i] = []
     for (let j = 0; j < size; j++) {
-      newBoard[i][j] = 0
+      newBoard[i][j] = false
     }
   }
   return newBoard
