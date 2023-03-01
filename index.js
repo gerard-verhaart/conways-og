@@ -8,7 +8,8 @@ const randomize = true
 
 let board = createBoard(size, randomize)
 
-setTimeout(() => {
+setInterval(() => {
+  console.clear()
   displayBoard(board)
   board = nextBoard(board)
 }, refreshInterval)

@@ -2,15 +2,10 @@ const isOutOfBounds = require('./isOutOfBounds')
 
 function indicesAreOutOfBounds(rowIndex, columnIndex, board) {
   let indexOutOfBounds = false
-  let size = board.length
-  if (rowIndex < 0) {
-    indexOutOfBounds = true
-  } else if (rowIndex >= size) {
+  if (isOutOfBounds(rowIndex, board[0])) {
     indexOutOfBounds = true
   }
-  if (columnIndex < 0) {
-    indexOutOfBounds = true
-  } else if (columnIndex >= size) {
+  if (isOutOfBounds(columnIndex, board[0])) {
     indexOutOfBounds = true
   }
   return indexOutOfBounds
