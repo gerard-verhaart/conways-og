@@ -2,7 +2,7 @@ const createBoard = require('../createBoard')
 
 test('createBoard returns boards with the correct dimensions', () => {
   for (let i = 1; i < 5; i++) {
-    const board = createBoard(i)
+    const board = createBoard(i, false)
 
     expect(board).toHaveLength(i)
     expect(board[0]).toHaveLength(i)
@@ -10,7 +10,7 @@ test('createBoard returns boards with the correct dimensions', () => {
 })
 
 test('each row of the returned board is a different array', () => {
-  const board = createBoard(2)
+  const board = createBoard(2, false)
 
   expect(board[0]).not.toBe(board[1])
 })
