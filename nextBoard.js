@@ -3,12 +3,14 @@ const countAliveNeighbours = require('./countAliveNeighbours')
 
 function nextBoard(currentBoard) {
   let nextBoard = []
-  for (let i = 0; i < currentBoard.length; i++) {
-    nextBoard[i] = []
-    for (let j = 0; j < currentBoard[0].length; j++) {
-      nextBoard[i][j] = nextCellState(
-        currentBoard[i][j],
-        countAliveNeighbours(i, j, currentBoard)
+  // console.log(currentBoard)
+  // console.log(currentBoard[0])
+  for (let row = 0; row < currentBoard.length; row++) {
+    nextBoard[row] = []
+    for (let col = 0; col < currentBoard[row].length; col++) {
+      nextBoard[row][col] = nextCellState(
+        currentBoard[row][col],
+        countAliveNeighbours(row, col, currentBoard)
       )
     }
   }
