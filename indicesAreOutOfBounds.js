@@ -1,18 +1,17 @@
 const isOutOfBounds = require('./isOutOfBounds')
 
 function indicesAreOutOfBounds(rowIndex, columnIndex, board) {
-  let rowOutOfBounds = true
-  let columnOutOfBounds = true
-  let indexOutOfBounds = true
-  if (rowIndex < board.length && rowIndex >= 0) {
-    rowOutOfBounds = false
+  let indexOutOfBounds = false
+  let size = board.length
+  if (rowIndex < 0) {
+    indexOutOfBounds = true
+  } else if (rowIndex >= size) {
+    indexOutOfBounds = true
   }
-  if (columnIndex < board.length && columnIndex >= 0) {
-    columnOutOfBounds = false
-  }
-
-  if (!rowOutOfBounds && !columnOutOfBounds) {
-    indexOutOfBounds = false
+  if (columnIndex < 0) {
+    indexOutOfBounds = true
+  } else if (columnIndex >= size) {
+    indexOutOfBounds = true
   }
   return indexOutOfBounds
 }

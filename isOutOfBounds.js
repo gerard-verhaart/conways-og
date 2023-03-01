@@ -1,6 +1,11 @@
 function isOutOfBounds(index, array) {
-  console.log('index: ' + index)
-  console.log('array: ' + array)
+  let outOfBounds = false
+  if (index < 0) {
+    outOfBounds = true
+  } else if (index >= array.length) {
+    outOfBounds = true
+  }
+  return outOfBounds
 }
 
 module.exports = isOutOfBounds
